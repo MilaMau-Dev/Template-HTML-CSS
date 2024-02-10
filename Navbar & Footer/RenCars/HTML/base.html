@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="static/location/css/style.css">
+    <title>Title</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg bg-light fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-brand">RenCars</div>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="/">Accueil</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="" role="button" data-bs-toggle="dropdown"
+                       aria-expanded="false">
+                        Véhicules
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/vehicules">Tous les vehicules</a></li>
+                        <li><a class="dropdown-item" href="/vehicules_citadines">Citadines</a></li>
+                        <li><a class="dropdown-item" href="/vehicules_utilitaires">Utilitaires</a></li>
+                        <li><a class="dropdown-item" href="/vehicules_luxueux">Luxueux</a></li>
+                        <li><a class="dropdown-item" href="/vehicules_SUV">SUV</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/services">Services</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/a_propos">A propos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/contact">Contact</a>
+                </li>
+                <div class="nav-connexion">
+                <li class="nav-item">
+                    {% if user.is_authenticated %}
+
+                        <span>{{ user.username }}</span>
+                        <a href="{% url 'logout' %}">Déconnexion</a>
+
+                    {%else%}
+
+                        <a href="{% url 'login' %}">Connexion</a>
+                        <a href="{% url 'signup' %}">S'inscrire</a>
+
+                    {% endif %}
+                </li>
+                </div>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div>
+
+     <footer>
+        <div class="content">
+            <ul>
+                <li class="nav-item">
+                    <a class="nav-link" href="/">Accueil</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/vehicules">Véhicules</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/services">Services</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/a_propos">A propos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/contact">Contact</a>
+                </li>
+            </ul>
+            <p>&copy; 2024 RenCars. Tous droits réservés.</p>
+        </div>
+
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+            crossorigin="anonymous">
+
+    </script>
+
+
+</body>
+</html>

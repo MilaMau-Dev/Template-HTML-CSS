@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/accounts/css/style.css">
+    <title>Connexion</title>
+</head>
+<body>
+    <form method="POST">
+        <h1>Connexion</h1>
+        {% csrf_token %}
+        <p>
+            <label for="username">Nom d'utilisateur</label>
+            <input id="username" type="text" name="username" required>
+        </p>
+        <p>
+            <label for="password">Mot de passe</label>
+            <input id="password" type="password" name="password" required>
+        </p>
+        <p style="text-align: center">
+            <a href="/signup">Vous n'avez pas encore de compte ?</a>
+        </p>
+        <button type="submit">Connexion</button>
+    </form>
+</body>
+</html>
