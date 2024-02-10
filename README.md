@@ -1,2 +1,2 @@
 # Template-HTML-CSS
-Solution de d'outils déjà fait et modifiable
+Solutions d'outils déjà fait et modifiable
